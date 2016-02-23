@@ -1,7 +1,12 @@
+
+import java.text.NumberFormat;
+import java.util.Scanner;
+
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name:     Ethan Enright
+ * Date:     Feb 23/16
+ * Version:  v0.03
+ * Description: 
  */
 
 /**
@@ -16,20 +21,41 @@ public class Restaurant {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        double x = 10.00;
-        double Bill = x * 1.13;
-        double HST = x * 0.13;
-        double Tip = x * 1.10;
-        double toatle = (x * 1.10) * 1.13 ;
+            // Objects
+        Scanner input = new Scanner( System.in );
+        NumberFormat money = NumberFormat.getCurrencyInstance();
+
         
-        System.out.println( "Your meal today cost you $" + x );
-        System.out.println( "Toatle HST tax is $" + HST );
-        System.out.println( "With a much appreciated 10% tip amount of $" + Tip );
-        System.out.println( "Your toatle for todays meal is $" + toatle );
+            // Constants
+        final double HST_RATE = 0.13;
         
-        System.out.println(" ");
-        System.out.println( "Hope to see you again soon thank you for comeing " );
+            // Variables
+        double subTotal, total, tax;
         
+            //Program Intro
+        System.out.println( "McDonalds's Bill Calculator" );
+        System.out.println( "---------------------------" );
+        System.out.println( "This program will ask for the meal total" );
+        System.out.println( "This subtotle, tax, and final amount." );
+        System.out.println( "" );
+        
+            // User Input
+        System.out.print("Please enter money amount");
+        subTotal = input.nextDouble();
+        
+            // Calculations
+        tax = subTotal + HST_RATE;
+        total = subTotal + HST_RATE;
+        
+            // Output
+        System.out.println( "-----------Recipt-----------" );
+        
+        System.out.format( "%14s %10s\n", "Meal Cost:", money.format( subTotal ) );
+        System.out.format( "%14s %10s\n", "Tax (13%): ", money.format( tax ) );
+        System.out.format( "%14s %10s\n", "Total: ", money.format( total ) );
+
+                
+
     }
     
 }
