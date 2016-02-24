@@ -27,7 +27,7 @@ public class Restaurant {
 
         
             // Constants
-        final double HST_RATE = 0.13;
+        final double HST_RATE = 1.13;
         
             // Variables
         double subTotal, total, tax;
@@ -53,8 +53,6 @@ public class Restaurant {
         System.out.format( "%14s %10s\n", "Meal Cost:", money.format( subTotal ) );
         System.out.format( "%14s %10s\n", "Tax (13%): ", money.format( tax ) );
         System.out.format( "%14s %10s\n", "Total: ", money.format( total ) );
-
-                
 
     }
     
