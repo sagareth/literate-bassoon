@@ -27,7 +27,7 @@ public class Restaurant {
 
         
             // Constants
-        final double HST_RATE = 1.13;
+        final double HST_RATE = 0.13;
         
             // Variables
         double subTotal, total, tax;
